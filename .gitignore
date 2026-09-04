@@ -1,5 +1,5 @@
-# OneDrive 联接目录：不纳入版本管理（内容在 OneDrive 自有版本控制中）
-raw/onedrive网盘/
+# raw/ 原始材料整体不纳入版本管理（体积大且不可变，本地留存即可）
+raw/
 
 # 顶层用户自有文件夹，不处理
 onedrive网盘/
