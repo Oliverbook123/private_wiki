@@ -1,0 +1,11 @@
+# OneDrive 联接目录：不纳入版本管理（内容在 OneDrive 自有版本控制中）
+raw/onedrive网盘/
+
+# 顶层用户自有文件夹，不处理
+onedrive网盘/
+原始文件/
+
+# Office/系统临时文件
+~$*
+Thumbs.db
+Desktop.ini
