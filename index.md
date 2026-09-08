@@ -9,7 +9,7 @@
 
 ## Concepts
 - [[academic-master-cultivation-plan-2026]] — 2026 级学硕总则：3 年制、32 学分、必修环节 4 学分细则
-- [[academic-graduation-requirements]] — 申请学位的学术成果要求：学硕路径 A/B，专硕五选一
+- [[academic-graduation-requirements]] — 申请学位的学术成果要求：学硕路径 A/B，专硕五选一（名次/等次细则，照片双源印证）
 - [[cs-course-credits]] — 计算机类三学科课程设置：公共学位课 9 学分、必选课、专业课差异
 - [[offshore-network-access-policy]] — 境外网络访问管理办法（2026-09-01 实施）：统一合规通道、学术场景审批、一人一权限时
 

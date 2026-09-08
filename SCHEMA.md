@@ -5,7 +5,7 @@
 
 ## 目录说明
 - `raw/` 第一层：不可变原始材料（文章、论文 PDF、办公文档、转录稿、素材）。**永远不修改 raw/ 下的文件。**
-- `raw/documents/` 存放 Office 文档（docx 等）原件及其文本层提取件（`*.extracted.txt`，含 sha256 frontmatter）。
+- `raw/documents/` 存放 Office 文档（docx 等）原件、其文本层提取件（`*.extracted.txt`），以及图片照片的视觉模型转录件（`*.transcribed.txt`，尾部附转录说明）；图片原件存 `raw/assets/`。均含 sha256 frontmatter。
 - `entities/` `concepts/` `comparisons/` `queries/` 第二层：由 Agent 创建、维护的 wiki 页面。
 - `原始文件/`、`onedrive网盘/` 为用户自有文件夹，**不纳入 wiki 结构，不处理**；需要入库的文件由用户确认后复制进 `raw/`。
 

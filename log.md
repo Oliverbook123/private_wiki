@@ -32,3 +32,8 @@
 - 新建页面：concepts/offshore-network-access-policy（管理办法要点：统一合规通道、适用场景、权限规则、禁止行为）
 - 更新页面：entities/jiangsu-university-of-science-and-technology（新增「管理制度」小节、sources、互链）
 - index.md 更新为 7 页
+
+## [2026-09-08] ingest | 研究生专硕毕业要求.jpg（屏摄照片转录入库）
+- 原件复制到 raw/assets/；vision 分上下两半逐字转录（中段重叠拼接），转录件 raw/documents/zhuanshuo-biye-yaqiu.transcribed.txt（含 sha256 与转录说明）
+- 更新页面：concepts/academic-graduation-requirements（专硕五选一节扩充名次/等次/软著细则，加溯源标记，双来源印证一致；sources/updated bump）
+- SCHEMA.md 目录说明补 raw/assets/ 与 *.transcribed.txt 约定；index.md 该行摘要更新（页数仍 7）
