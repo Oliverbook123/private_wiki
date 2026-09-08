@@ -37,3 +37,4 @@
 - 原件复制到 raw/assets/；vision 分上下两半逐字转录（中段重叠拼接），转录件 raw/documents/zhuanshuo-biye-yaqiu.transcribed.txt（含 sha256 与转录说明）
 - 更新页面：concepts/academic-graduation-requirements（专硕五选一节扩充名次/等次/软著细则，加溯源标记，双来源印证一致；sources/updated bump）
 - SCHEMA.md 目录说明补 raw/assets/ 与 *.transcribed.txt 约定；index.md 该行摘要更新（页数仍 7）
+- [勘误 2026-09-08] 审查子代理双源 diff 通过后修正：转录件 CSCD 机构名采 PDF 原文「中国科学院科学文献情报中心」+ 注通行名称疑 PDF 衍字；sha256 bump 为 62bc44b3…；原件照片未动
