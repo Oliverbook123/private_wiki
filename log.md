@@ -26,3 +26,9 @@
 - .gitignore 排除：raw/onedrive网盘 联接、顶层用户自有文件夹、Office 临时文件
 - 仓库级 git 身份：董御书 <dongyushu@local>
 - 约定：此后每次 ingest/update/lint 完成即 commit 一次
+
+## [2026-09-08] ingest | 江苏科技大学境外网络访问管理办法.docx
+- 来源：raw/onedrive网盘/（用户指示入库）；原件复制到 raw/documents/，文本层提取为 jingwai-wangluo-fangwen-guanli-banfa.extracted.txt（含 sha256 frontmatter）
+- 新建页面：concepts/offshore-network-access-policy（管理办法要点：统一合规通道、适用场景、权限规则、禁止行为）
+- 更新页面：entities/jiangsu-university-of-science-and-technology（新增「管理制度」小节、sources、互链）
+- index.md 更新为 7 页

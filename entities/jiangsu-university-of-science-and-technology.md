@@ -1,10 +1,10 @@
 ---
 title: 江苏科技大学
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-08
 type: entity
 tags: [company, cultivation]
-sources: [raw/papers/peiyang-fangan-2026.extracted.txt]
+sources: [raw/papers/peiyang-fangan-2026.extracted.txt, raw/documents/jingwai-wangluo-fangwen-guanli-banfa.extracted.txt]
 confidence: high
 ---
 
@@ -21,10 +21,13 @@ confidence: high
 ## 特色定位
 服务国家**船海与国防**战略：船舶软硬件、海洋开发、船海大模型、智慧海洋等是各学科共同的特色方向。
 
+## 管理制度
+- 《境外网络访问管理办法》（2026-09-01 实施）：统一合规通道访外，见 [[offshore-network-access-policy]]。归口部门为信息化建设与大数据管理中心（信管中心）。
+
 ## 学位授予依据文件
 - 《江苏科技大学博士、硕士学位授予实施细则》（江科大校〔2026〕121 号）
 - 《研究生学位论文工作和学术道德规范管理规定（修订）》（江科大校〔2026〕31 号）
 - 《研究生学位论文撰写要求及格式规范》
 
 ## 相关页面
-[[academic-master-cultivation-plan-2026]] · [[academic-graduation-requirements]] · [[cs-research-directions]]
+[[academic-master-cultivation-plan-2026]] · [[academic-graduation-requirements]] · [[cs-research-directions]] · [[offshore-network-access-policy]]
