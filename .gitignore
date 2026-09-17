@@ -1,7 +1,14 @@
 # onedrive网盘 体积大，不纳入版本管理
 onedrive网盘/
 
-# Office/系统临时文件
+# Windows 系统文件
 ~$*
 Thumbs.db
 Desktop.ini
+
+# macOS 系统文件
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.__afs*
