@@ -1,7 +1,7 @@
 ---
 title: 读研里程碑时间线（2026 级学硕）
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-17
 type: query
 tags: [cultivation, requirement, timeline, thesis]
 sources: [raw/papers/peiyang-fangan-2026.extracted.txt]
@@ -27,4 +27,4 @@ confidence: medium
 - 全部课程学分 + 必修环节 4 学分达成后方可答辩
 
 ## 相关页面
-[[academic-master-cultivation-plan-2026]] · [[academic-graduation-requirements]] · [[cs-course-credits]]
+[[academic-master-cultivation-plan-2026]] · [[academic-graduation-requirements]] · [[cs-course-credits]] · [[scholarship-evaluation-rules]]

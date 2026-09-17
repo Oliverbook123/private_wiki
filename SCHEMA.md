@@ -46,7 +46,7 @@ sha256: <正文（frontmatter 之后）的哈希>
 - 模型与系统: model, architecture, benchmark, system, agent
 - 训练与推理: training, fine-tuning, inference, alignment, data, evaluation
 - 科研方法: method, experiment, writing, publication, review
-- 培养与学位: cultivation, coursework, requirement, thesis, degree
+- 培养与学位: cultivation, coursework, requirement, thesis, degree, scholarship
 - 人物/机构: person, company, lab, open-source
 - 元信息: comparison, timeline, controversy, prediction
 

@@ -38,3 +38,9 @@
 - 更新页面：concepts/academic-graduation-requirements（专硕五选一节扩充名次/等次/软著细则，加溯源标记，双来源印证一致；sources/updated bump）
 - SCHEMA.md 目录说明补 raw/assets/ 与 *.transcribed.txt 约定；index.md 该行摘要更新（页数仍 7）
 - [勘误 2026-09-08] 审查子代理双源 diff 通过后修正：转录件 CSCD 机构名采 PDF 原文「中国科学院科学文献情报中心」+ 注通行名称疑 PDF 衍字；sha256 bump 为 62bc44b3…；原件照片未动
+
+## [2026-09-17] ingest | 计算机学院奖学金评审细则（两份 PDF）
+- 来源：raw/onedrive网盘/（两份 PDF 已在 raw/papers/）；文本层提取为 guojia-jiangxuejin-pingshen-xize.extracted.txt 和 xueye-jiangxuejin-pingshen-xize.extracted.txt（含 sha256 frontmatter）
+- 新建页面：concepts/scholarship-evaluation-rules（国家奖学金与学业奖学金评分公式对比、A/B/C 量化体系、科研成果计分细则、评审流程、实操要点）
+- 更新页面：entities/jiangsu-university-of-science-and-technology（新增「奖学金制度」小节、sources bump、互链）；concepts/academic-graduation-requirements（补反向链接）；queries/thesis-milestone-timeline（补反向链接）
+- SCHEMA.md tag 分类法「培养与学位」新增 scholarship；index.md 更新为 8 页

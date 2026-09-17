@@ -1,10 +1,10 @@
 ---
 title: 江苏科技大学
 created: 2026-09-04
-updated: 2026-09-08
+updated: 2026-09-17
 type: entity
 tags: [company, cultivation]
-sources: [raw/papers/peiyang-fangan-2026.extracted.txt, raw/documents/jingwai-wangluo-fangwen-guanli-banfa.extracted.txt]
+sources: [raw/papers/peiyang-fangan-2026.extracted.txt, raw/documents/jingwai-wangluo-fangwen-guanli-banfa.extracted.txt, raw/papers/guojia-jiangxuejin-pingshen-xize.extracted.txt, raw/papers/xueye-jiangxuejin-pingshen-xize.extracted.txt]
 confidence: high
 ---
 
@@ -24,10 +24,13 @@ confidence: high
 ## 管理制度
 - 《境外网络访问管理办法》（2026-09-01 实施）：统一合规通道访外，见 [[offshore-network-access-policy]]。归口部门为信息化建设与大数据管理中心（信管中心）。
 
+## 奖学金制度
+- 学院奖学金评审依据院级两份细则：〔2025〕1 号（学业奖学金）、〔2025〕2 号（国家奖学金），均自 2025 年 9 月起实行。共用同一套综合素质量化评分体系（A 综合表现 / B 学习情况 / C 科研工作），但权重和门槛不同。详见 [[scholarship-evaluation-rules]]。
+
 ## 学位授予依据文件
 - 《江苏科技大学博士、硕士学位授予实施细则》（江科大校〔2026〕121 号）
 - 《研究生学位论文工作和学术道德规范管理规定（修订）》（江科大校〔2026〕31 号）
 - 《研究生学位论文撰写要求及格式规范》
 
 ## 相关页面
-[[academic-master-cultivation-plan-2026]] · [[academic-graduation-requirements]] · [[cs-research-directions]] · [[offshore-network-access-policy]]
+[[academic-master-cultivation-plan-2026]] · [[academic-graduation-requirements]] · [[cs-research-directions]] · [[offshore-network-access-policy]] · [[scholarship-evaluation-rules]]

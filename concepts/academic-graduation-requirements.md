@@ -1,7 +1,7 @@
 ---
 title: 硕士申请学位学术成果要求（2026 级）
 created: 2026-09-04
-updated: 2026-09-08
+updated: 2026-09-17
 type: concept
 tags: [requirement, publication, degree, thesis]
 sources: [raw/papers/peiyang-fangan-2026.extracted.txt, raw/documents/zhuanshuo-biye-yaqiu.transcribed.txt]
@@ -41,4 +41,4 @@ confidence: high
 - 竞赛目录以**获奖当年**学校认定目录为准
 
 ## 相关页面
-[[academic-master-cultivation-plan-2026]] · [[jiangsu-university-of-science-and-technology]] · [[thesis-milestone-timeline]]
+[[academic-master-cultivation-plan-2026]] · [[jiangsu-university-of-science-and-technology]] · [[thesis-milestone-timeline]] · [[scholarship-evaluation-rules]]
