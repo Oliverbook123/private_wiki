@@ -1,11 +1,11 @@
-# raw/ 原始材料整体不纳入版本管理（体积大且不可变，本地留存即可）
-raw/
-
 # 顶层用户自有文件夹，不处理
 onedrive网盘/
 原始文件/
+
+# 未来若经 raw/onedrive网盘 等联接挂载大目录，需单独排除（见 onedrive网盘/）
 
 # Office/系统临时文件
 ~$*
 Thumbs.db
 Desktop.ini
+.DS_Store
