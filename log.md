@@ -54,3 +54,11 @@
 - 现存 git 历史中的 raw/ 旧材料（papers/documents/assets）不在本机工作副本，本次无需 git rm --cached
 - .gitignore 同时新增 .DS_Store（raw/bilibili 下现有 1 个，不入库）；onedrive网盘/、原始文件/ 排除规则保留，防止未来挂载联接时误提交
 - SCHEMA.md raw/bilibili 约定补注「字幕纳入 git、大块原料需单独排除」；raw/ 文件内容本身未改动（不可变原则不变）
+
+## [2026-09-30] ingest | 水论文的程序猿-水导：期刊分级/顶刊顶会/机构售价
+- 来源：raw/bilibili/水论文的程序猿-水导/【水论文的程序猿-水导】—什么是水刊、顶刊顶会？期刊级别划分及机构售价，sci，ccf，ssci，ei，国内核心…—【2023-04-14】-中文.md（单集，532 行字幕，2023-04-14 发布；raw/ 同日起已纳入 git 跟踪）
+- 新建 pages（3 concept）：journal-and-conference-tiers（刊号 CN/ISSN、地域、七大核心、SCI Q1-Q4 与中科院分区、ISTP/EI 会议、CCF 目录与查询渠道）、top-journal-conference（顶刊 SCI 一区 TOP、顶会源自 CCF A、约定俗成、学校内部 ABCD 评级与评学积分导向）、predatory-journal-market（水刊统计识别法、代写代发售价，confidence: low）
+- 与既有页面互链：[[academic-graduation-requirements]]（SCIE/EI/CSCD/北大核心收录口径，updated bump 并加互指）、[[cs-course-credits]]（科研伦理必修课）、[[offshore-network-access-policy]]（合规检索通道）、[[thesis-milestone-timeline]]（投稿节奏）
+- 内容性质：单一来源经验性内容，价格为 2023 快变口径（confidence low）；转录勘误：「支网→知网」「let's pop→LetPub」「小牧虫→小木虫」「括/扩→CCF」「巩固学术→谷歌学术」「EPSCI→SCI」「hci→AHCI」；影响因子阈值等注转录存疑
+- index.md 更新为 21 页；SCHEMA.md raw/bilibili 批次目录命名放宽（SubBatch_* 或按 UP 主命名）
+- [lint 2026-09-30] 双子代理审查：①格式审查 PASS（frontmatter/tags/命名/sources/wikilinks/index/log/页长，0 问题）；②内容保真度审查发现 8 项低风险偏差并已修复：「只认 CN 刊号」补回 SCI 限定、南大核心「偏人文社科」标注为常识补充、「三大刊物」按口径改注转录存疑并提示与「三大学报」名单不一致、「通常 30 分」收窄为该校个案、「评学（奖助/评优）」按讹误原样标注转录存疑、EI 会议残句推断标注转录存疑；全部数字/术语/ASR 校正核对无误

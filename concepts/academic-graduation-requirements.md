@@ -1,7 +1,7 @@
 ---
 title: 硕士申请学位学术成果要求（2026 级）
 created: 2026-09-04
-updated: 2026-09-08
+updated: 2026-09-30
 type: concept
 tags: [requirement, publication, degree, thesis]
 sources: [raw/papers/peiyang-fangan-2026.extracted.txt, raw/documents/zhuanshuo-biye-yaqiu.transcribed.txt]
@@ -39,6 +39,7 @@ confidence: high
 - 路径 A 的期刊周期长，录用证明即可，但需预留审稿周期
 - 发明专利"公开"≠"授权"：学硕路径 B 只需公开，专硕第 3 条需授权（周期更长）
 - 竞赛目录以**获奖当年**学校认定目录为准
+- 收录口径的背景知识（SCI 分区、顶刊顶会、CCF 目录、国内七大核心）见 [[journal-and-conference-tiers]] 与 [[top-journal-conference]]；本校文件优先于任何外部经验
 
 ## 相关页面
-[[academic-master-cultivation-plan-2026]] · [[jiangsu-university-of-science-and-technology]] · [[thesis-milestone-timeline]]
+[[academic-master-cultivation-plan-2026]] · [[jiangsu-university-of-science-and-technology]] · [[thesis-milestone-timeline]] · [[journal-and-conference-tiers]] · [[top-journal-conference]]

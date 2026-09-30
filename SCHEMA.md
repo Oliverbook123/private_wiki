@@ -6,7 +6,7 @@
 ## 目录说明
 - `raw/` 第一层：不可变原始材料（文章、论文 PDF、办公文档、转录稿、素材）。**永远不修改 raw/ 下的文件。**
 - `raw/documents/` 存放 Office 文档（docx 等）原件、其文本层提取件（`*.extracted.txt`），以及图片照片的视觉模型转录件（`*.transcribed.txt`，尾部附转录说明）；图片原件存 `raw/assets/`。均含 sha256 frontmatter。
-- `raw/bilibili/` 存放 B 站视频字幕批次目录（`SubBatch_*`，字幕一字一行，文件名含集数与发布日期）。导入后不改动原文，按主题拆分为 `concepts/` 等 wiki 页面并在 frontmatter `sources` 中引用对应批次文件；明显语音转录讹误按上下文校正，无法确定的保留原样并注「转录存疑」。字幕为小体积文本，已纳入 git 版本管理（2026-09-30 起）；若未来经 `raw/` 挂载大体积原料目录（PDF/照片等）或网盘联接，应在 .gitignore 中单独排除。
+- `raw/bilibili/` 存放 B 站视频字幕批次目录（如 `SubBatch_*` 或按 UP 主命名的目录，字幕一字一行，文件名含标题与发布日期）。导入后不改动原文，按主题拆分为 `concepts/` 等 wiki 页面并在 frontmatter `sources` 中引用对应批次文件；明显语音转录讹误按上下文校正，无法确定的保留原样并注「转录存疑」。字幕为小体积文本，已纳入 git 版本管理（2026-09-30 起）；若未来经 `raw/` 挂载大体积原料目录（PDF/照片等）或网盘联接，应在 .gitignore 中单独排除。
 - `entities/` `concepts/` `comparisons/` `queries/` 第二层：由 Agent 创建、维护的 wiki 页面。
 - `原始文件/`、`onedrive网盘/` 为用户自有文件夹，**不纳入 wiki 结构，不处理**；需要入库的文件由用户确认后复制进 `raw/`。
 
