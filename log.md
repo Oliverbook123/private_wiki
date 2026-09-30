@@ -38,3 +38,13 @@
 - 更新页面：concepts/academic-graduation-requirements（专硕五选一节扩充名次/等次/软著细则，加溯源标记，双来源印证一致；sources/updated bump）
 - SCHEMA.md 目录说明补 raw/assets/ 与 *.transcribed.txt 约定；index.md 该行摘要更新（页数仍 7）
 - [勘误 2026-09-08] 审查子代理双源 diff 通过后修正：转录件 CSCD 机构名采 PDF 原文「中国科学院科学文献情报中心」+ 注通行名称疑 PDF 衍字；sha256 bump 为 62bc44b3…；原件照片未动
+
+## [2026-09-30] ingest | B站《SCI论文写作》20集教程字幕（SubBatch_2026-09-30-10-16-54_MD）
+- 来源：raw/bilibili/SubBatch_2026-09-30-10-16-54_MD/（20 集字幕，UP 主「道口流/DOKO」系列，2024-04-03 发布；raw/ 不入版本管理，本地留存）
+- 内容性质：单一来源、经验性写作方法论、每集附付费课引流；各页 confidence: medium，建议交叉验证
+- 新建 pages（10 concept + 1 query）：concepts/sci-paper-writing-course（总览+分集地图+转录勘误）、paper-three-segment-structure、introduction-writing、research-goal-formulation、research-goal-description、literature-review-writing、literature-reading-method、literature-analysis-logic、structured-thinking-pyramid、discussion-and-conclusion-writing、queries/sci-paper-writing-workflow
+- 多集主题按 SCHEMA 阈值拆分并互链；与既有页面建立关联：[[offshore-network-access-policy]]（境外文献检索合规）、[[thesis-milestone-timeline]]（投稿节奏）、[[cs-course-credits]]（学术论文写作规范课）
+- SCHEMA.md 目录说明新增 raw/bilibili/ 字幕批次约定（含转录讹误校正规则）；index.md 更新为 18 页
+- 转录勘误示例：「语言→引言」「素英/速因→溯因」「MC→MECE」「肠胃目标→长远目标」；ROSETTING（P15）、音质（P16）注「转录存疑」
+- [lint 2026-09-30] 双子代理审查：①格式审查对照 SCHEMA.md 逐项核查 PASS（frontmatter/tags/命名/76 条 sources 路径/wikilinks/溯源标记/index/log/页长）；②内容保真度审查逐字比对 P1–P20 字幕，发现 10 项并已全部修正：三段划分中研究目标归属（P1）、「三种比较」误作四种（P18）、途径三收窄为「异地」（P3）、「股价→骨架」漏改并传播至 query 页（P11）、「音质」改按口径注转录存疑（P16）、补 hope/seek/try 之 seek（P14）、「自然肌理」注转录存疑（P15）、introduction-writing 补列 P1 来源、pyramid 页移除列而未用的 P12、literature-analysis-logic 为必然性/可能性之别补注 P17 出处
+- [勘误 2026-09-30] index.md 增设「Summaries」小节，sci-paper-writing-course（type: summary）移入该节，与 SCHEMA type 枚举对齐
