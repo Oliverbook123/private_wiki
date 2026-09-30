@@ -33,4 +33,4 @@ confidence: medium
 - 读者读文献通常先读引言段与结论段，有必要时才深入中间段——首尾段是整篇论文存在价值的根基，尤其是引言段。
 
 ## 相关页面
-[[introduction-writing]] · [[discussion-and-conclusion-writing]] · [[research-goal-formulation]] · [[sci-paper-writing-course]]
+[[introduction-writing]] · [[discussion-and-conclusion-writing]] · [[research-goal-formulation]] · [[thesis-structure-and-title]] · [[sci-paper-writing-course]]

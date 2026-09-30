@@ -50,4 +50,6 @@ confidence: medium
 分析推理方法（归纳/演绎/溯因）见 [[literature-analysis-logic]]；如何为综述收集与整理论据见 [[literature-reading-method]]。
 
 ## 相关页面
-[[introduction-writing]] · [[literature-analysis-logic]] · [[literature-reading-method]] · [[sci-paper-writing-course]]
+[[introduction-writing]] · [[literature-analysis-logic]] · [[literature-reading-method]] · [[thesis-introduction-and-review]] · [[sci-paper-writing-course]]
+
+（学位论文「国内外研究现状」章的总分总+时间线写法见 [[thesis-introduction-and-review]]，与本页 SCI 综述互补。）

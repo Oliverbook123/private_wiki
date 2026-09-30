@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面按其类型列于一行：wikilink + 一句话摘要。
 > 查询前先读本文件以定位相关页面。
-> Last updated: 2026-09-30 | Total pages: 21
+> Last updated: 2026-09-30 | Total pages: 28
 
 ## Entities
 - [[jiangsu-university-of-science-and-technology]] — 江苏科技大学：计算机类四学科概况、船海特色、学位文件编号
@@ -24,12 +24,19 @@
 - [[journal-and-conference-tiers]] — 期刊与会议分级：CN/ISSN 刊号、国家级/省级、七大核心、SCI/SSCI/AHCI/EI、CCF 目录与查询渠道
 - [[top-journal-conference]] — 顶刊顶会认定：SCI 一区 TOP、约定俗成、学校内部 ABCD 评级与评学积分导向
 - [[predatory-journal-market]] — 水刊识别统计法与代写代发市场售价（2023 口径，confidence low，风险警示）
+- [[thesis-structure-and-title]] — 学位论文章节结构与题目设计：五/六章模板、算法研究 vs 系统设计两类题型、本科与硕士差异
+- [[thesis-introduction-and-review]] — 学位论文引言与研究现状：背景三段式、总分总+时间线的中外文献铺陈
+- [[theory-datasets-and-metrics]] — 相关技术理论章：万金油理论清单、公开数据集、按任务选的评价指标
+- [[thesis-model-chapter]] — 模型解析章（整体结构+分模块+改进）与系统设计章（本科工作量担当）
+- [[experiment-design-and-analysis]] — 实验章：环境/数据处理/超参/看图说话、消融与对比实验写法
+- [[thesis-conclusion-and-abstract]] — 总结展望两段式与摘要四段式（均最后写，浓缩全文）
 
 ## Comparisons
 - [[cs-research-directions]] — 0812/0835/99J3 十五个研究方向对比表及独有方向分析
 
 ## Summaries
 - [[sci-paper-writing-course]] — B站《SCI论文写作》20 集教程（道口流系列）总览：分集地图、转录勘误、单一来源提示
+- [[paoge-thesis-course]] — B站《炮哥带你一周搞定人工智能算法论文》14 集教程总览：分集地图、转录勘误
 
 ## Queries
 - [[thesis-milestone-timeline]] — 读研三载里程碑时间线：课程→中期考核/开题→成果产出→预答辩→答辩

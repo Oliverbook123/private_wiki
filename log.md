@@ -62,3 +62,11 @@
 - 内容性质：单一来源经验性内容，价格为 2023 快变口径（confidence low）；转录勘误：「支网→知网」「let's pop→LetPub」「小牧虫→小木虫」「括/扩→CCF」「巩固学术→谷歌学术」「EPSCI→SCI」「hci→AHCI」；影响因子阈值等注转录存疑
 - index.md 更新为 21 页；SCHEMA.md raw/bilibili 批次目录命名放宽（SubBatch_* 或按 UP 主命名）
 - [lint 2026-09-30] 双子代理审查：①格式审查 PASS（frontmatter/tags/命名/sources/wikilinks/index/log/页长，0 问题）；②内容保真度审查发现 8 项低风险偏差并已修复：「只认 CN 刊号」补回 SCI 限定、南大核心「偏人文社科」标注为常识补充、「三大刊物」按口径改注转录存疑并提示与「三大学报」名单不一致、「通常 30 分」收窄为该校个案、「评学（奖助/评优）」按讹误原样标注转录存疑、EI 会议残句推断标注转录存疑；全部数字/术语/ASR 校正核对无误
+
+## [2026-09-30] ingest | 炮哥带你学：一周搞定人工智能算法论文（SubBatch_2026-09-30-14-37-34_MD）
+- 来源：raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/（14 集字幕，2025-03-06 发布，每集 5-10 分钟；配套写作指南+约 2 万字论文模板，示例为基于 YOLOv8 的工地安全帽/着装检测）
+- 新建 pages（6 concept + 1 summary）：paoge-thesis-course（总览+分集地图+转录勘误）、thesis-structure-and-title（章节结构+题目设计+1.3 研究内容安排）、thesis-introduction-and-review（背景意义三段式+国内外研究现状总分总）、theory-datasets-and-metrics（万金油理论/公开数据集/按任务评价指标）、thesis-model-chapter（模型解析写法+系统设计章）、experiment-design-and-analysis（环境/数据/超参/看图说话/消融对比）、thesis-conclusion-and-abstract（总结展望两段式+摘要四段式）
+- 与既有页面互链（5 页加互指，均为今日所建故 updated 不变）：paper-three-segment-structure、introduction-writing、literature-review-writing、discussion-and-conclusion-writing、sci-paper-writing-course（学位论文 vs SCI 论文两种体裁互补）
+- 内容性质：单一来源经验性教程，「本科 5 天/硕士 7-10 天出初稿」为 UP 主口径；反复强调模板水印/勿抄/降重，已与 [[predatory-journal-market]]、[[cs-course-credits]] 风险页互链；转录勘误：「符合预测→负荷预测」「UV8→YOLOv8」「南派→NumPy」「label image→LabelImg」「fast r cn→Faster R-CNN」等
+- index.md 更新为 28 页
+- [lint 2026-09-30] 双子代理审查：①格式审查 PASS（frontmatter/tags/命名/sources 14 条路径/wikilinks/溯源标记/index 28 页/log/页长，0 问题）；②内容保真度审查发现 5 项低风险偏差并已修复：MNIST 无原文依据改回「手写数字识别」、thesis-structure-and-title 补登记 P7/P11 为来源并在分集地图反映跨页引用、结论页两处跨体裁综合论断标注「维护者综合」并注明 SCI 列转引出处；数字/术语/ASR 校正全部核对无误

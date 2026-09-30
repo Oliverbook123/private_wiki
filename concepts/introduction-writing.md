@@ -43,7 +43,7 @@ confidence: medium
 > 问题 X 的重要性已被学术界广泛认可。研究者 A 发现了……研究者 B 发现了……基于这些理由，我们认为回答问题 C 对于解决问题 X 至关重要。
 
 ## 写作时机
-引言一般落脚于研究目标，很多论文在引言结尾处连接对研究目标的完整描述；写引言不需要实验数据，宜尽早动笔（出自 P1，见 [[paper-three-segment-structure]]）。目标如何定义、与长期目标如何呼应，见 [[research-goal-description]]。
+引言一般落脚于研究目标，很多论文在引言结尾处连接对研究目标的完整描述；写引言不需要实验数据，宜尽早动笔（出自 P1，见 [[paper-three-segment-structure]]）。目标如何定义、与长期目标如何呼应，见 [[research-goal-description]]。学位论文引言的「背景—现状—本文内容」三段式见 [[thesis-introduction-and-review]]。
 
 ## 相关页面
 [[paper-three-segment-structure]] · [[research-goal-description]] · [[literature-review-writing]]

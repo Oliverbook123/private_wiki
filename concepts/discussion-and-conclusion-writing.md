@@ -54,6 +54,7 @@ confidence: medium
 ## Conclusion：亮点与方向缺一不可
 - 结论一般可视为对讨论部分的总结；当研究目标或研究方法本身构成重要创新点时，结论中也应复述并强调其创新性。
 - 好的结论做到两点：**突出亮点**（创新点，可来自结果的结论，也可来自目标或方法的创新）+ **指出局限与尚未解决的问题**，并对今后研究方向提出建议或设想。
+- 学位论文无 Discussion 章，对应功能拆入实验分析与「总结与展望」，见 [[thesis-conclusion-and-abstract]]。
 
 ## 相关页面
-[[paper-three-segment-structure]] · [[literature-analysis-logic]] · [[introduction-writing]] · [[sci-paper-writing-course]]
+[[paper-three-segment-structure]] · [[literature-analysis-logic]] · [[introduction-writing]] · [[thesis-conclusion-and-abstract]] · [[sci-paper-writing-course]]
