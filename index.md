@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面按其类型列于一行：wikilink + 一句话摘要。
 > 查询前先读本文件以定位相关页面。
-> Last updated: 2026-09-30 | Total pages: 28
+> Last updated: 2026-10-06 | Total pages: 31
 
 ## Entities
 - [[jiangsu-university-of-science-and-technology]] — 江苏科技大学：计算机类四学科概况、船海特色、学位文件编号
@@ -30,6 +30,9 @@
 - [[thesis-model-chapter]] — 模型解析章（整体结构+分模块+改进）与系统设计章（本科工作量担当）
 - [[experiment-design-and-analysis]] — 实验章：环境/数据处理/超参/看图说话、消融与对比实验写法
 - [[thesis-conclusion-and-abstract]] — 总结展望两段式与摘要四段式（均最后写，浓缩全文）
+- [[llm-agent-action-loop]] — LLM 智能体动作循环：goal+observation→action→环境执行，自回归串行慢与探索需分布两大瓶颈
+- [[jev-decision-model]] — Jev 决策模型（TypeSafe AI System One）：typed decisions+校准概率、单次前向、RLCD、nano-jev 生态
+- [[parallel-decision-principle]] — 并行动作概率预测（Jev 核心思路）：f(observation,goal,action) 打分、action space、attention 融合、mask→logits→softmax
 
 ## Comparisons
 - [[cs-research-directions]] — 0812/0835/99J3 十五个研究方向对比表及独有方向分析

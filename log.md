@@ -70,3 +70,12 @@
 - 内容性质：单一来源经验性教程，「本科 5 天/硕士 7-10 天出初稿」为 UP 主口径；反复强调模板水印/勿抄/降重，已与 [[predatory-journal-market]]、[[cs-course-credits]] 风险页互链；转录勘误：「符合预测→负荷预测」「UV8→YOLOv8」「南派→NumPy」「label image→LabelImg」「fast r cn→Faster R-CNN」等
 - index.md 更新为 28 页
 - [lint 2026-09-30] 双子代理审查：①格式审查 PASS（frontmatter/tags/命名/sources 14 条路径/wikilinks/溯源标记/index 28 页/log/页长，0 问题）；②内容保真度审查发现 5 项低风险偏差并已修复：MNIST 无原文依据改回「手写数字识别」、thesis-structure-and-title 补登记 P7/P11 为来源并在分集地图反映跨页引用、结论页两处跨体裁综合论断标注「维护者综合」并注明 SCI 列转引出处；数字/术语/ASR 校正全部核对无误
+
+## [2026-10-06] ingest | 马文高Marvin：拆解 Jev 的实现原理
+- 来源：raw/bilibili/【马文高Marvin】—拆解Jev的实现原理—【2026-09-21】-中文.md（单集，560 行字幕，2026-09-21 发布；raw/ 已纳入 git 跟踪）
+- 主题核实：Jev 为 TypeSafe AI 2026-09-15 发布的「System One」类型化决策模型，经网络检索交叉核对（官方博客/LangChain/Turing Post 等二手来源，官方原文未逐字核验，页面注明）；字幕中 JZ/GEV/gave/JAVE/JB/介入 等均为 Jev 的 ASR 变体
+- 新建 pages（3 concept）：concepts/llm-agent-action-loop（自回归回顾+智能体工具调用循环+串行慢/探索需分布两大痛点）、concepts/jev-decision-model（Jev 本体：官方口径、agent 路由/评分/控制用途、RLCD、开源生态 nano-jev 与转录存疑的第二实现、对比表）、concepts/parallel-decision-principle（视频核心：f(observation,goal,action) 并行打分、任务级 action space、attention 融合、mask 定位→logits→softmax、CE/MSE loss、复用千问 encoder）
+- 内容性质：单集教学拆解（原理部分为 UP 主对开源实现路径的讲解，非官方文档，confidence: medium）+ 网络快变口径；为本库首批智能体主题页面，三页互链成组
+- 转录勘误：「Auto regret→autoregressive」「any e→essay」「应试→映射」「making→mapping」「tab→table」「ACOK→actions」「log/LOGATES/LOGIITS→logits」「soft matt→softmax」「头坑/偷子→token」「master→mask」「wit h→weight」「表针→表征」「千万→千问」「H十→H10」「V3→Z3」「nano jazz/NANOJEFF→nano-jev」；「气口」「spin」「car」「Y」（第二开源实现名）注转录存疑，poor/PON/城市A1 等无法确定的片段未采信
+- index.md 更新为 31 页
+- [lint 2026-10-06] 双子代理审查：①格式审查 PASS（frontmatter/tags/命名/sources 路径/wikilinks 全库 0 悬空/溯源标记/index 31 页计数/log/页长），1 项 log 措辞偏差（poor/PON 实未采信入页）已修正；②内容保真度审查：无 P1 虚构，全部技术机制陈述逐行溯源通过；发现 2 项 P2（jev-decision-model 导语脚注覆盖范围过宽把网络事实挂到字幕来源、「用法」「开源生态」两小节缺网络来源标注）与 4 项 P3，均已修复：脚注收窄至视频可证陈述、官方口径内容逐节标注「官方口径/网络检索，非视频内容」、页 1 attention 表述回归字幕（L51 原文按下不表）、「反复强调」改「强调」、对比表注明维护者据官方口径整理、页 3「只过一次模型」补注 nano-jev 批量合并语境
