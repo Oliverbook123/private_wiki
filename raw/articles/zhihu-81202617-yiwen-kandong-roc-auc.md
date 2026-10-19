@@ -1,7 +1,7 @@
 ---
 source_url: https://zhuanlan.zhihu.com/p/81202617
 ingested: 2026-10-19
-sha256: 4bde1d1efcebad99e983e5e1ecc5d35d3a86a21c0ba0efb3cdebeb6072e3f9b3
+sha256: d263499586c4ca9439d1b50daa6ad88e175d22beef76351b3e8b13ea4fce159a
 ---
 
 评测指标是衡量一个算法是否出色的一个重要部分，好的指标能让我们这些炼丹学徒知道，练出来的丹药是否有效果。那么在机器学习中有哪些值得一探究竟的指标呢？本文就PR图，ROC、AUC、mAP这4个方面进行详细探究。
