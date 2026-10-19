@@ -79,3 +79,10 @@
 - 转录勘误：「Auto regret→autoregressive」「any e→essay」「应试→映射」「making→mapping」「tab→table」「ACOK→actions」「log/LOGATES/LOGIITS→logits」「soft matt→softmax」「头坑/偷子→token」「master→mask」「wit h→weight」「表针→表征」「千万→千问」「H十→H10」「V3→Z3」「nano jazz/NANOJEFF→nano-jev」；「气口」「spin」「car」「Y」（第二开源实现名）注转录存疑，poor/PON/城市A1 等无法确定的片段未采信
 - index.md 更新为 31 页
 - [lint 2026-10-06] 双子代理审查：①格式审查 PASS（frontmatter/tags/命名/sources 路径/wikilinks 全库 0 悬空/溯源标记/index 31 页计数/log/页长），1 项 log 措辞偏差（poor/PON 实未采信入页）已修正；②内容保真度审查：无 P1 虚构，全部技术机制陈述逐行溯源通过；发现 2 项 P2（jev-decision-model 导语脚注覆盖范围过宽把网络事实挂到字幕来源、「用法」「开源生态」两小节缺网络来源标注）与 4 项 P3，均已修复：脚注收窄至视频可证陈述、官方口径内容逐节标注「官方口径/网络检索，非视频内容」、页 1 attention 表述回归字幕（L51 原文按下不表）、「反复强调」改「强调」、对比表注明维护者据官方口径整理、页 3「只过一次模型」补注 nano-jev 批量合并语境
+
+## [2026-10-19] ingest | 知乎《一文看懂ROC、AUC》（二分类评价指标）
+- 来源：raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md（archive.org 2019 快照文本层逐字收录；直连/API/无头浏览器均被知乎反爬拦截；原文篇首提及的 PR 图、mAP 文本层无对应章节，未收录）
+- 内容性质：2019 年单一来源经验性科普；原文 AUC「0.1–1」等口径不严谨处按标准口径书写并双标注（原文口径/标准口径），confidence: medium
+- 新建页面：concepts/binary-classification-evaluation-metrics（混淆矩阵与 TP/FP/TN/FN、Accuracy/Precision/Recall/FPR/TNR、ROC 曲线阈值扫描法、AUC 概率意义与三种计算方法、C++ 代码片段；PR/mAP 缺口已声明）
+- 更新页面：concepts/theory-datasets-and-metrics（2.4 分类行补 ROC/AUC、加互指与溯源标记、sources 扩充、updated bump）
+- 互链：[[theory-datasets-and-metrics]]、[[experiment-design-and-analysis]]；index.md 更新为 32 页

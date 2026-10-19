@@ -1,11 +1,12 @@
 ---
 title: 相关技术理论、数据集与评价指标
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-19
 type: concept
 tags: [method, experiment]
 sources:
   - "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P6【6、相关技术及理论】—【2025-03-06】-中文.md"
+  - "raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md"
 confidence: medium
 ---
 
@@ -30,10 +31,11 @@ confidence: medium
 ## 2.4 评价指标
 | 任务类型 | 常用指标 |
 |---|---|
-| 分类 | 准确率、精确率、召回率、F1 |
+| 分类 | 准确率、精确率、召回率、F1、ROC/AUC |
 | 回归/预测 | RMSE、MAE、MSE、R² |
 | 目标检测 | 准确率/精确率/召回率/F1 + mAP、IoU |
 
+- 二分类指标的细节（混淆矩阵与 TP/FP/TN/FN、各率口径、ROC 曲线与 AUC 三种计算方法）见 [[binary-classification-evaluation-metrics]]。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 - 目标检测本质是分类（是什么）+ 回归（框在哪）的综合，故兼有两类指标。
 - **按任务选指标**：做回归就写回归指标，做分类就写分类指标，「不伦不类」最忌讳；指标也可放到实验章写。
 - 评价指标是实验章结果表格与消融/对比的口径基础，见 [[experiment-design-and-analysis]]。
