@@ -11,7 +11,7 @@ confidence: medium
 
 # 二分类评价指标：混淆矩阵、ROC 与 AUC
 
-本页整理二分类任务的常用评价指标：混淆矩阵、由其衍生的各率、ROC 曲线与 AUC（含三种计算方法与原文 C++ 代码）。来源为 2019 年知乎专栏科普文（archive.org 快照文本层逐字收录），单一来源、经验性科普，confidence: medium；原文无显式公式处按标准口径补充并逐处标注。本页是 [[theory-datasets-and-metrics]] 第 2.4 节分类指标行的细节展开；指标在实验章怎么用见 [[experiment-design-and-analysis]]。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
+本页整理二分类任务的常用评价指标：混淆矩阵、由其衍生的各率、ROC 曲线与 AUC（含三种计算方法与原文 C++ 代码）。来源为 2019 年知乎专栏科普文（archive.org 快照文本层逐字收录），单一来源、经验性科普，confidence: medium；原文无显式公式处按标准口径补充并逐处标注。本页是 [[theory-datasets-and-metrics]] 第 2.4 节分类指标行的细节展开；指标在实验章怎么用见 [[experiment-design-and-analysis]]。规范化说明：拼写讹误（receiveroperating characteristic、false postive rate）与行文笔误（「AUC 曲线」实指 ROC 曲线；FN/TN 释义收句两处见「混淆矩阵」节注）按标准写法校正，口语化表达轻改写（炼丹学徒→训练者、丹药→模型），原文口径与标准口径冲突处双标注；raw/ 照录原文。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 
 ## 为什么从二分类谈起
 - 评测指标是衡量一个算法是否出色的重要部分：好的指标能让训练者知道练出来的模型是否有效果。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
@@ -25,7 +25,7 @@ confidence: medium
 - **TP** 真正例：模型的判断是正例（P），实际上它也是正例，预测正确（T）。
 - **FP** 假正例：模型的判断是正例（P），实际上这是错误的（F）。
 - **FN** 假负例：模型的判断是负例（N），实际上这是错误的（F）。
-- **TN** 真负例：模型的判断是负例（N），实际上它也是负类，预测正确（T）。
+- **TN** 真负例：模型的判断是负例（N），实际上它也是负例，预测正确（T）。
 - 原文 FN、TN 两条释义的收句分别误写为「连起来就是假正例」「就是真正例」，按口径理解为假负例、真负例（维护者注，原文错别字照录于 raw/）。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 
 ## 由混淆矩阵衍生的指标
@@ -43,13 +43,13 @@ confidence: medium
 
 ### FPR 与 TNR
 - **FPR**（负正类率）：原文表述为「分类器预测的正类中实际负实例占所有负实例的比例」，并给出 FPR = 1 − TNR。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
-- 原文该句绕（「预测的正类中」与「所有负实例」两个分母口径混用），本页按标准口径书写：FPR = FP / (FP + TN)，即所有负实例中被错判为正实例的比例。（维护者按标准口径补充并注明原文口径）
+- 原文该句表述绕（字面为「分类器预测的正类中实际负实例占所有负实例的比例」，即 FP / (FP + TN)，口径与标准一致），本页按标准口径书写：FPR = FP / (FP + TN)，即所有负实例中被错判为正实例的比例。（维护者按标准口径整理并注明原文口径）
 - **TNR**（真负类率）：原文表述为「分类器预测的负类中负实例占所有负实例的比例」，TNR = 1 − FPR。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 - 标准公式：TNR = TN / (TN + FP)，即特异度（specificity）。（维护者按标准口径补充，原文本层仅见图示，无显式公式）
 
 ## ROC 曲线
 - ROC 曲线即接收者操作特征（receiver operating characteristic）曲线；原文称 roc 曲线上每个点反映着对同一信号刺激的感受性。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
-- 横轴：假正类率（false positive rate，FPR）——原文在此与「特异度」并提；按标准口径，特异度 = TNR = 1 − FPR，与 FPR 互补（维护者按标准口径注）。
+- 横轴：假正类率（false positive rate，FPR）——原文在此与「特异度」并提，并跟一句「划分实例中所有负例占所有负例的比例」（文本层含混，未采信）；按标准口径，特异度 = TNR = 1 − FPR，与 FPR 互补（维护者按标准口径注）。
 - 纵轴：真正类率 TPR（true positive rate）== Recall，即灵敏度 Sensitivity（正类覆盖率）。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 - 阈值扫描法（原文口径）：
   1. 假设已得出一系列样本被划分为正类的概率（score），按从大到小排序。
@@ -79,7 +79,7 @@ confidence: medium
 
 ### 计算方法三：公式法（rank 法）
 - 步骤：首先对 score 从大到小排序，令最大 score 对应 sample 的 rank 为 n，第二大 score 对应 sample 的 rank 为 n−1，以此类推。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
-- 然后把所有正类样本的 rank 相加，再减去两个正样本组合的情况，得到所有样本中有多少对正类样本的 score 大于负类样本的 score，再除以 M×N。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
+- 然后把所有正类样本的 rank 相加，再减去两个正样本组合的情况（原文作「减去 M-1 种」，口径含混，标准减项为 M(M+1)/2，详见下条），得到所有样本中有多少对正类样本的 score 大于负类样本的 score，再除以 M×N。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 - 标准公式：AUC = (Σrank(正类样本) − M(M+1)/2) / (M×N)。（维护者按标准口径整理；原文以文字叙述减项来由，图片公式未在文本层）
 - 原文对减项的解释：若所有正样本 score 值都大于负样本，第一位（rank 为 n）与任一样本组合 score 都大，但 n−1 中有 M−1 个是正样例与正样例的组合、不在统计范围内（为计算方便取 n 组，相应不符合的有 M 个），要减掉；排在第二位的 n−1 同理有 M−1 个不满足，依次类推，得到 M*(M+1)/2。可验证在正样本 score 都大于负样本的假设下 AUC 的值为 1。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 - rank 的含义：rank 代表能够产生 score 前大后小组合的组合数，但其中包含（正，正）的情况，所以要减去排在它后面正例的个数。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
@@ -117,7 +117,7 @@ double AUC(vector<pair<int, double> > &a) {
 	return auc;
 }
 ```
-- 代码照录原文（archive.org 快照文本层），含原注释；main 函数（读入样本数 n 与 n 对 (label, score) 后调用 AUC 并输出）略去，核心为排序后按阈值扫描累加梯形面积：`auc += (TPnext*(FPnext - FP)) / (PosNum*NegNum)`。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
+- 代码照录原文（archive.org 快照文本层），含原注释；预处理指令（include 与 using namespace std）与 main 函数（读入样本数 n 与 n 对 (label, score) 后调用 AUC 并输出）略去，核心为排序后按阈值扫描累加梯形面积：`auc += (TPnext*(FPnext - FP)) / (PosNum*NegNum)`。^[raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md]
 - 维护者注：该实现逐个样本降阈值，未对相等 score 作等 rank 平均处理；score 有相等值时结果随输入次序偏离标准口径，严谨场景应改用方法三的相等 score 处理。
 
 ## 原文缺口

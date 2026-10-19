@@ -86,3 +86,4 @@
 - 新建页面：concepts/binary-classification-evaluation-metrics（混淆矩阵与 TP/FP/TN/FN、Accuracy/Precision/Recall/FPR/TNR、ROC 曲线阈值扫描法、AUC 概率意义与三种计算方法、C++ 代码片段；PR/mAP 缺口已声明）
 - 更新页面：concepts/theory-datasets-and-metrics（2.4 分类行补 ROC/AUC、加互指与溯源标记、sources 扩充、updated bump）
 - 互链：[[theory-datasets-and-metrics]]、[[experiment-design-and-analysis]]；index.md 更新为 32 页
+- [lint 2026-10-19] 双子代理审查：①格式审查对照 SCHEMA.md 逐项核查 PASS（frontmatter/tags/命名/sources 路径/wikilinks 全库 276 条 0 悬空/溯源标记/index 32 页计数与磁盘一致/log 格式/页长，0 问题）；②内容保真度审查逐段比对 raw 原文：TP/FP/FN/TN 释义、Accuracy/Precision/Recall 口径、FPR = 1 − TNR 与 TNR = 1 − FPR、ROC 横纵轴与阈值扫描法（含 (0,0) 点）、AUC 概率解释、三种计算方法（M×N、相等按 0.5、O(n²)、n = M + N、rank 法 M(M+1)/2 与相等 score 取平均 rank）、C++ 代码（与原文逐行一致、梯形面积累加行原样、main 略去有说明）均核对无误，PR/mAP 未虚构；发现 6 项并已全部修正：TN 释义「负类」改回原文「负例」（已知疑点确认）、FPR 节「口径混用」表述收窄（原文口径实与标准一致）、ROC 横轴节补注原文 FPR 定义残句「划分实例中所有负例占所有负例的比例」文本层含混未采信、rank 公式节补回原文「M-1 种」表述并注标准减项、代码节补注预处理指令亦略去、导语补注原文讹误规范化范围；未决 1 项：raw/ frontmatter sha256 与正文哈希不符（raw 不可变未改动，留待用户裁决）
