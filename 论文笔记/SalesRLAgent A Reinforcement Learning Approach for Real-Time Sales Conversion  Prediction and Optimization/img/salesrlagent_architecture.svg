@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="880" viewBox="0 0 1140 880">
+  <defs>
+    <marker id="arrG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#C62828"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; fill:#333; }
+    .h1 { font-size:24px; font-weight:bold; fill:#111; }
+    .sub { font-size:14px; fill:#666; }
+    .h2 { font-size:18px; font-weight:bold; fill:#111; }
+    .bt { font-size:15px; font-weight:bold; fill:#111; }
+    .item { font-size:13px; }
+    .lbl { font-size:13px; fill:#222; }
+    .bar { font-size:15px; font-weight:bold; }
+  </style>
+
+  <rect x="0" y="0" width="1140" height="880" fill="#FDFDFD"/>
+
+  <!-- 标题 -->
+  <text class="h1" x="570" y="38" text-anchor="middle">SalesRLAgent 架构简图:输入什么 → 输出什么</text>
+  <text class="sub" x="570" y="62" text-anchor="middle">输入:客服和用户逐轮聊天内容  输出:每轮一个成交概率 + 置信度  |  就这一个决策,不选话术、不选动作,动作是销售本人做的</text>
+
+  <!-- ============ ① 推理 ============ -->
+  <text class="h2" x="30" y="105">① 推理(每聊一轮跑一次,Algorithm 1)</text>
+
+  <!-- 输入 -->
+  <rect x="30" y="125" width="280" height="290" rx="10" fill="#E8EEF7" stroke="#4A6FA5" stroke-width="2"/>
+  <text class="bt" x="170" y="153" text-anchor="middle">对话逐轮写入(输入)</text>
+  <line x1="50" y1="165" x2="290" y2="165" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="190">客服/用户逐条开口的 transcript</text>
+  <text class="item" x="50" y="215">带说话人标注(客户 vs 销售)</text>
+  <text class="item" x="50" y="245">每聊一轮,历史多一条</text>
+  <text class="item" x="50" y="270">当前看到第 t 轮为止的历史</text>
+  <line x1="50" y1="290" x2="290" y2="290" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="315">没有别的东西进来:</text>
+  <text class="item" x="50" y="340">不看 CRM 表格,不看画像</text>
+
+  <!-- 状态构造 -->
+  <rect x="430" y="125" width="280" height="290" rx="10" fill="#FFF4E0" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="570" y="153" text-anchor="middle">状态构造(Algorithm 1)</text>
+  <line x1="450" y1="165" x2="690" y2="165" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="450" y="190">① ExtractHistory:截到第 t 轮</text>
+  <text class="item" x="450" y="220">② GenerateAzureEmbeddings</text>
+  <text class="item" x="450" y="245">　 → 3072 维语义向量</text>
+  <text class="item" x="450" y="275">③ ExtractFeatures:销售专用特征</text>
+  <text class="item" x="450" y="305">④ CombineState:</text>
+  <text class="item" x="450" y="330">　 向量+特征拼成当前状态</text>
+  <text class="item" x="450" y="360">说了什么、怎么说,都进状态</text>
+
+  <!-- 三个网络 -->
+  <rect x="830" y="125" width="280" height="290" rx="10" fill="#FFF4E0" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="970" y="153" text-anchor="middle">三个网络各管一件事</text>
+  <line x1="850" y1="165" x2="1090" y2="165" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="bt" x="850" y="195">policy network</text>
+  <text class="item" x="850" y="220">　 状态 → 成交概率</text>
+  <text class="bt" x="850" y="255">value network</text>
+  <text class="item" x="850" y="280">　 状态 → 期望累计奖励</text>
+  <text class="item" x="850" y="305">　 (训练期当 critic)</text>
+  <text class="bt" x="850" y="340">meta-learning 模块</text>
+  <text class="item" x="850" y="365">　 状态 → 置信度</text>
+  <text class="item" x="850" y="390">　 看与训练集相似/集成一致</text>
+
+  <!-- 箭头:推理 -->
+  <text class="lbl" x="370" y="252" text-anchor="middle">历史</text>
+  <line x1="315" y1="264" x2="425" y2="264" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <text class="lbl" x="770" y="252" text-anchor="middle">状态</text>
+  <line x1="715" y1="264" x2="825" y2="264" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <text class="lbl" x="970" y="436" text-anchor="middle">三个头一起出</text>
+  <line x1="970" y1="420" x2="970" y2="448" stroke="#1565C0" stroke-width="2.5" marker-end="url(#arrB)"/>
+
+  <!-- 输出条 -->
+  <rect x="30" y="455" width="1080" height="60" rx="8" fill="#EAF7EA" stroke="#2E7D32" stroke-width="1.5"/>
+  <text class="bar" x="570" y="480" text-anchor="middle" fill="#1B5E20">每轮输出:probability(会成交吗) + confidence(这个判断可信吗)</text>
+  <text class="item" x="570" y="502" text-anchor="middle" fill="#333">悬浮提示+建议方向推给销售代表(CRM/通话工具);没有话术输出,不是对话机器人;43.2% 转化提升来自人看着提示改行为</text>
+
+  <!-- ============ ② 训练 ============ -->
+  <text class="h2" x="30" y="555">② 训练(离线一次,CPU 六小时)</text>
+
+  <!-- 数据 -->
+  <rect x="30" y="575" width="340" height="210" rx="10" fill="#E8EEF7" stroke="#4A6FA5" stroke-width="2"/>
+  <text class="bt" x="200" y="603" text-anchor="middle">数据:没有真实数据,全合成</text>
+  <line x1="50" y1="615" x2="350" y2="615" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="640">GPT-4o 生成 120 万条对话</text>
+  <text class="item" x="50" y="665">15 行业场景模板+程序化变体</text>
+  <text class="item" x="50" y="695">3~27 轮,中位数 8 轮</text>
+  <text class="item" x="50" y="720">负样本 56%(贴合成率偏低)</text>
+  <text class="item" x="50" y="750">每条带:成功失败标签+逐轮概率标注</text>
+
+  <!-- 配方 -->
+  <rect x="430" y="575" width="340" height="210" rx="10" fill="#FFF4E0" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="600" y="603" text-anchor="middle">训练配方(六步)</text>
+  <line x1="450" y1="615" x2="750" y2="615" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="450" y="640">① 监督预训练,先有个能用的初值</text>
+  <text class="item" x="450" y="670">② RL:reward 从最终成交结果回传</text>
+  <text class="item" x="450" y="700">③ 课程学习:简单对话先上</text>
+  <text class="item" x="450" y="725">④ 对抗训练:难例专喂</text>
+  <text class="item" x="450" y="750">⑤ 集成 ⑥ 批次平衡;强正则+保守更新</text>
+
+  <!-- 结果 -->
+  <rect x="830" y="575" width="280" height="210" rx="10" fill="#EAF7EA" stroke="#2E7D32" stroke-width="2"/>
+  <text class="bt" x="970" y="603" text-anchor="middle">得到的东西</text>
+  <line x1="850" y1="615" x2="1090" y2="615" stroke="#2E7D32" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="850" y="640">训好的 policy+meta,冻结</text>
+  <text class="item" x="850" y="670">部署:纯 CPU,8bit 量化</text>
+  <text class="item" x="850" y="700">增量状态更新(不全量重算)</text>
+  <text class="item" x="850" y="730">embedding 缓存</text>
+  <text class="item" x="850" y="760">实测:85ms / 12 req/s</text>
+
+  <!-- 训练箭头 -->
+  <line x1="375" y1="680" x2="425" y2="680" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <line x1="775" y1="680" x2="825" y2="680" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+
+  <!-- 底部结果条 -->
+  <rect x="30" y="815" width="1080" height="44" rx="8" fill="#FFF8E1" stroke="#D9822B" stroke-width="1.5"/>
+  <text class="bar" x="570" y="843" text-anchor="middle" fill="#8A5A00">交易:120 万条合成数据+CPU 六小时训练 ↔ 0.967 精度、85ms 实时;代价是测试集不透明(合成 or 真实,论文没写,证据链断点)</text>
+</svg>

@@ -8,37 +8,36 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7745b916f92d346f",
+            "id": "da97c474eca1bcda",
             "type": "leaf",
             "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "queries/sci-paper-writing-workflow.md",
+                "file": "研究方向/依赖保持上下文压缩.md",
                 "mode": "preview",
-                "source": false
+                "source": true
               },
               "pinned": true,
               "icon": "lucide-file",
-              "title": "sci-paper-writing-workflow"
+              "title": "依赖保持上下文压缩"
             }
           },
           {
-            "id": "206eb7a1873782f4",
+            "id": "d382b569dc6bc739",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/bilibili/水论文的程序猿-水导/【水论文的程序猿-水导】—什么是水刊、顶刊顶会？期刊级别划分及机构售价，sci，ccf，ssci，ei，国内核心…—【2023-04-14】-中文.md",
+                "file": "论文笔记/LongCodeZip Compress Long Context for Code Language Models/LongCodeZip阅读计划.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【水论文的程序猿-水导】—什么是水刊、顶刊顶会？期刊级别划分及机构售价，sci，ccf，ssci，ei，国内核心…—【2023-04-14】-中文"
+              "title": "LongCodeZip阅读计划"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -100,7 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 219.77734375
   },
   "right": {
     "id": "393171938c7f312e",
@@ -116,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/bilibili/SubBatch_2026-09-30-10-16-54_MD/【SCI论文写作】—【全20集】目前B站最完整的论文写作教程，包含所有干货内容！这还没人看，我不更了！ - P3【3研究选题的三种途径】—【2024-04-03】-中文.md",
+                "file": "concepts/llm-agent-action-loop.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -205,40 +204,48 @@
       "bases:新建数据库": false
     }
   },
-  "active": "e09284fbb625de25",
+  "active": "da97c474eca1bcda",
   "lastOpenFiles": [
-    "concepts/thesis-conclusion-and-abstract.md",
-    "concepts/experiment-design-and-analysis.md",
-    "concepts/thesis-model-chapter.md",
-    "concepts/theory-datasets-and-metrics.md",
-    "concepts/thesis-introduction-and-review.md",
-    "concepts/thesis-structure-and-title.md",
+    "论文笔记/LongCodeZip Compress Long Context for Code Language Models/LongCodeZip阅读计划.md",
+    "论文笔记/LongCodeZip Compress Long Context for Code Language Models/LongCodeZip阅读笔记.md",
+    "研究方向/依赖保持上下文压缩.md",
+    "论文笔记/LongCodeZip Compress Long Context for Code Language Models",
+    "zotero-paper-study-notes/agents/openai.yaml",
+    "zotero-paper-study-notes/agents",
+    "zotero-paper-study-notes/SKILL.md",
+    "zotero-paper-study-notes",
+    "论文笔记/TestGenEval A Real World Unit Test Generation and Test Completion Benchmark/TestGenEval阅读笔记.md",
+    "论文笔记/TestGenEval A Real World Unit Test Generation and Test Completion Benchmark/TestGenEval阅读计划.md",
     "concepts/paoge-thesis-course.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P14【14、摘要】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P13【13、研究内容及章节安排】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P11【11、模型系统的设计】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P10【10、消融与对比实验】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P5【5、国内外研究现状】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P3【3、论文题目的分析】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P7【7、基于某种算法的某某场景模型解析】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P1【1、课程先导】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P12【12、总结与展望】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P2【2、论文整体结构的分析】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P9【9、实验过程及其结果分析】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P6【6、相关技术及理论】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P4【4、研究背景及其意义】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD/【炮哥带你学】—炮哥带你一周搞定人工智能算法论文（手把手论文撰写教学） - P8【8、实验环境设置与数据处理】—【2025-03-06】-中文.md",
-    "raw/bilibili/SubBatch_2026-09-30-14-37-34_MD",
-    "concepts/predatory-journal-market.md",
+    "论文笔记/TestGenEval A Real World Unit Test Generation and Test Completion Benchmark",
+    "AGENTS.md",
+    "论文笔记/DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models/DeepSeekMoE笔记20261020.md",
+    "研究方向/inspect_docx.py",
+    "研究方向/依赖保持上下文压缩.docx",
+    "研究方向/未命名文件夹",
+    "研究方向",
+    "未命名文件夹",
+    "论文笔记/Foundation Models in Robotics: Applications, Challenges, and the Future/Foundation Models in Robotics笔记20261021.md",
+    "raw/articles/zhihu-81202617-yiwen-kandong-roc-auc.md",
+    "论文笔记/SalesRLAgent A Reinforcement Learning Approach for Real-Time Sales Conversion  Prediction and Optimization/SalesRLAgent笔记20261016v2.md",
+    "concepts/binary-classification-evaluation-metrics.md",
+    "论文笔记/SalesRLAgent A Reinforcement Learning Approach for Real-Time Sales Conversion  Prediction and Optimization/img/salesrlagent_model_architecture.svg",
+    "论文笔记/SalesRLAgent A Reinforcement Learning Approach for Real-Time Sales Conversion  Prediction and Optimization/img/salesrlagent_data_pipeline.svg",
+    "论文笔记/SalesRLAgent A Reinforcement Learning Approach for Real-Time Sales Conversion  Prediction and Optimization/img/salesrlagent_architecture.svg",
+    "论文笔记/SalesRLAgent A Reinforcement Learning Approach for Real-Time Sales Conversion  Prediction and Optimization/SalesRLAgent笔记20261016.md",
+    "论文笔记/Confidence-Aware Routing for Large Language Model Reliability Enhancement A Multi-Signal  Approach to Pre-Generation Hallucination/ConfidenceRouting笔记20261016.md",
+    "论文笔记/SalesRLAgent A Reinforcement Learning Approach for Real-Time Sales Conversion  Prediction and Optimization/SalesRLAgent阅读笔记.md",
+    "论文笔记/Confidence-Aware Routing for Large Language Model Reliability Enhancement A Multi-Signal  Approach to Pre-Generation Hallucination/ConfidenceRouting阅读笔记.md",
+    "论文笔记/FlashAttention Fast and Memory-Efficient Exact Attention  with IO-Awareness/FlashAttention笔记20261016.md",
+    "论文笔记/FlashAttention Fast and Memory-Efficient Exact Attention  with IO-Awareness/FlashAttention阅读笔记.md",
+    "论文笔记/FlashAttention Fast and Memory-Efficient Exact Attention  with IO-Awareness/笔记20261016.md",
+    "论文笔记/FlashAttention Fast and Memory-Efficient Exact Attention  with IO-Awareness/img/flash_attention_flow.svg",
+    "论文笔记/FlashAttention Fast and Memory-Efficient Exact Attention  with IO-Awareness/flash_attention_flow.svg",
+    "concepts/llm-agent-action-loop.md",
+    "concepts/jev-decision-model.md",
+    "concepts/parallel-decision-principle.md",
     "concepts/top-journal-conference.md",
-    "concepts/journal-and-conference-tiers.md",
-    "concepts/sci-paper-writing-course.md",
-    "raw/bilibili/水论文的程序猿-水导/【水论文的程序猿-水导】—什么是水刊、顶刊顶会？期刊级别划分及机构售价，sci，ccf，ssci，ei，国内核心…—【2023-04-14】-中文.md",
-    "raw/bilibili/水论文的程序猿-水导",
-    "raw/bilibili/未命名文件夹",
-    "未命名.base",
-    "raw/bilibili/SubBatch_2026-09-30-10-16-54_MD",
-    "raw/bilibili",
-    "raw"
+    "concepts/theory-datasets-and-metrics.md",
+    "concepts/thesis-conclusion-and-abstract.md"
   ]
 }

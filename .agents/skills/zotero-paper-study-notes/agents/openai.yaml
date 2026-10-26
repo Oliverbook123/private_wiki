@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zotero 论文研读笔记"
+  short_description: "从 Zotero 已下载论文生成阅读计划与通俗易懂的阅读笔记"
+  default_prompt: "使用 $zotero-paper-study-notes 从 Zotero 阅读我指定的论文，并写阅读计划和阅读笔记。"

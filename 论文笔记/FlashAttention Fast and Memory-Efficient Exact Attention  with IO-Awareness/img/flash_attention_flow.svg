@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="920" viewBox="0 0 1240 920">
+  <defs>
+    <marker id="arrG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#C62828"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; fill:#333; }
+    .h1 { font-size:24px; font-weight:bold; fill:#111; }
+    .sub { font-size:14px; fill:#666; }
+    .h2 { font-size:18px; font-weight:bold; fill:#111; }
+    .bt { font-size:15px; font-weight:bold; fill:#111; }
+    .item { font-size:13px; }
+    .lbl { font-size:13px; fill:#222; }
+    .bar { font-size:15px; font-weight:bold; }
+  </style>
+
+  <rect x="0" y="0" width="1240" height="920" fill="#FDFDFD"/>
+
+  <!-- 标题 -->
+  <text class="h1" x="620" y="38" text-anchor="middle">FlashAttention 全流程简图:从读入张量到写出结果</text>
+  <text class="sub" x="620" y="62" text-anchor="middle">左:HBM(仓库·大而慢)  右:SRAM(工作台·小而快)  |  绿色=读入  蓝色=写回  红色虚线=禁止路径(N×N 矩阵不落盘)</text>
+
+  <!-- ============ 前向 ============ -->
+  <text class="h2" x="30" y="105">① 前向(Algorithm 1)</text>
+
+  <!-- HBM 前向 -->
+  <rect x="30" y="120" width="340" height="310" rx="10" fill="#E8EEF7" stroke="#4A6FA5" stroke-width="2"/>
+  <text class="bt" x="200" y="148" text-anchor="middle">HBM 显存(仓库 · 大而慢)</text>
+  <line x1="50" y1="160" x2="350" y2="160" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="185">起点:Q、K、V 已驻留 HBM</text>
+  <text class="item" x="50" y="210">　 Q、K、V(各 N×d)</text>
+  <text class="item" x="50" y="240">初始化账本:</text>
+  <text class="item" x="50" y="265">　 O = 0(N×d)</text>
+  <text class="item" x="50" y="290">　 ℓ = 0(N)    m = −∞(N)</text>
+  <line x1="50" y1="310" x2="350" y2="310" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="335">循环中持续被覆盖更新:</text>
+  <text class="item" x="50" y="360">　 O、m、ℓ ←(写回的新账本)</text>
+
+  <!-- SRAM 前向 -->
+  <rect x="730" y="120" width="480" height="310" rx="10" fill="#FFF4E0" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="970" y="148" text-anchor="middle">SRAM 片上缓存(工作台 · 小而快)</text>
+  <line x1="750" y1="160" x2="1190" y2="160" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="750" y="185">驻留:K_j、V_j(各 Bc×d,只读一次)</text>
+  <text class="item" x="750" y="210">读入:Q_i + 旧账本 O_i、m_i、ℓ_i</text>
+  <text class="item" x="750" y="240">──── 片上计算(全程不出 SRAM)────</text>
+  <text class="item" x="750" y="265">① S_ij = Q_i K_jᵀ(部分分数 Br×Bc)</text>
+  <text class="item" x="750" y="290">② 在线 softmax:m̃ = rowmax;P̃ = exp(S_ij−m̃);ℓ̃ = rowsum</text>
+  <text class="item" x="750" y="315">③ m_new = max(m_i, m̃)</text>
+  <text class="item" x="750" y="340">　 ℓ_new = e^(m_i−m_new)·ℓ_i + e^(m̃−m_new)·ℓ̃</text>
+  <text class="item" x="750" y="365">④ O_i ← 旧账按 e^(m_i−m_new) 缩放 + 新块 P̃_ij V_j,再除以 ℓ_new</text>
+  <text class="item" x="750" y="405">S_ij、P̃_ij:块算完即弃(N×N 从不拼出来)</text>
+
+  <!-- 箭头:前向 -->
+  <text class="lbl" x="550" y="170" text-anchor="middle">外层循环 j:读入 K_j、V_j(每块仅 1 次)</text>
+  <line x1="375" y1="182" x2="725" y2="182" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <text class="lbl" x="550" y="246" text-anchor="middle">内层循环 i:读入 Q_i + 账本(O_i, m_i, ℓ_i)</text>
+  <line x1="375" y1="258" x2="725" y2="258" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <text class="lbl" x="550" y="336" text-anchor="middle">写回:O_i、m_new、ℓ_new(下一块续算 &amp; 反向要用)</text>
+  <line x1="725" y1="348" x2="375" y2="348" stroke="#1565C0" stroke-width="2.5" marker-end="url(#arrB)"/>
+  <text class="lbl" x="550" y="396" text-anchor="middle" fill="#C62828">S、P 从不写入 HBM</text>
+  <line x1="725" y1="408" x2="375" y2="408" stroke="#C62828" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrR)"/>
+  <line x1="545" y1="400" x2="555" y2="416" stroke="#C62828" stroke-width="3"/>
+  <line x1="555" y1="400" x2="545" y2="416" stroke="#C62828" stroke-width="3"/>
+
+  <!-- 前向结果条 -->
+  <rect x="30" y="450" width="1180" height="40" rx="8" fill="#EAF7EA" stroke="#2E7D32" stroke-width="1.5"/>
+  <text class="bar" x="620" y="476" text-anchor="middle" fill="#1B5E20">循环结束 → O 就是精确的注意力输出 | 内存 O(N) | HBM 访问 Θ(N²d²/M) | 全程 N×N 矩阵未落盘</text>
+
+  <!-- ============ 反向 ============ -->
+  <text class="h2" x="30" y="530">② 反向(Algorithm 4):重算 S、P,只写回梯度</text>
+
+  <!-- HBM 反向 -->
+  <rect x="30" y="545" width="340" height="270" rx="10" fill="#E8EEF7" stroke="#4A6FA5" stroke-width="2"/>
+  <text class="bt" x="200" y="573" text-anchor="middle">HBM(前向结束后的库存)</text>
+  <line x1="50" y1="585" x2="350" y2="585" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="610">输入仍在:Q、K、V(N×d)</text>
+  <text class="item" x="50" y="635">上游梯度:dO(N×d)</text>
+  <text class="item" x="50" y="660">前向存的账本:O、m、ℓ</text>
+  <line x1="50" y1="680" x2="350" y2="680" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="50" y="705">注意:没有 S、P!</text>
+  <text class="item" x="50" y="730">(前向就没存它们)</text>
+
+  <!-- SRAM 反向 -->
+  <rect x="730" y="545" width="480" height="270" rx="10" fill="#FFF4E0" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="970" y="573" text-anchor="middle">SRAM(重算工作台)</text>
+  <line x1="750" y1="585" x2="1190" y2="585" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="750" y="610">外层 i 读入:Q_i、dO_i、O_i、m_i、ℓ_i → 算 D_i = dO_i·O_i</text>
+  <text class="item" x="750" y="635">内层 j 读入:K_j、V_j</text>
+  <text class="item" x="750" y="660">★ 重算 S_ij = Q_i K_jᵀ</text>
+  <text class="item" x="750" y="685">★ 重算 P_ij = exp(S_ij − m_i) / ℓ_i(账本派上用场)</text>
+  <text class="item" x="750" y="710">dP_ij = dO_i V_jᵀ;dS_ij = P_ij ⊙ (dP_ij − D_i)</text>
+  <text class="item" x="750" y="735">dV_j += P_ijᵀ dO_i;dK_j += dS_ijᵀ Q_i;dQ_i += dS_ij K_j</text>
+  <text class="item" x="750" y="775">S_ij、P_ij:用完即弃</text>
+
+  <!-- 箭头:反向 -->
+  <text class="lbl" x="550" y="596" text-anchor="middle">读入的是小块和账本(不是 S、P!)</text>
+  <line x1="375" y1="608" x2="725" y2="608" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <text class="lbl" x="550" y="684" text-anchor="middle">只写回梯度 dQ、dK、dV(各 N×d)</text>
+  <line x1="725" y1="696" x2="375" y2="696" stroke="#1565C0" stroke-width="2.5" marker-end="url(#arrB)"/>
+  <text class="lbl" x="550" y="742" text-anchor="middle" fill="#C62828">重算出的 S、P 不写回 HBM</text>
+  <line x1="725" y1="754" x2="375" y2="754" stroke="#C62828" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrR)"/>
+  <line x1="545" y1="746" x2="555" y2="762" stroke="#C62828" stroke-width="3"/>
+  <line x1="555" y1="746" x2="545" y2="762" stroke="#C62828" stroke-width="3"/>
+
+  <!-- 反向结果条 -->
+  <rect x="30" y="845" width="1180" height="44" rx="8" fill="#FFF8E1" stroke="#D9822B" stroke-width="1.5"/>
+  <text class="bar" x="620" y="873" text-anchor="middle" fill="#8A5A00">交易:多付 ~25% FLOPs ↔ 换来内存 O(N²)→O(N)、HBM 访问少至 9 倍 → 反向反而更快</text>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800">
+  <defs>
+    <marker id="arrG" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrB" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#C62828"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; fill:#333; }
+    .h1 { font-size:24px; font-weight:bold; fill:#111; }
+    .sub { font-size:14px; fill:#666; }
+    .h2 { font-size:18px; font-weight:bold; fill:#111; }
+    .bt { font-size:15px; font-weight:bold; fill:#111; }
+    .item { font-size:13px; }
+    .lbl { font-size:13px; fill:#222; }
+    .bar { font-size:15px; font-weight:bold; }
+  </style>
+
+  <rect x="0" y="0" width="1000" height="800" fill="#FDFDFD"/>
+
+  <!-- 标题 -->
+  <text class="h1" x="500" y="38" text-anchor="middle">SalesRLAgent 模型架构:一个 state encoder + 三个头</text>
+  <text class="sub" x="500" y="62" text-anchor="middle">输入:对话历史逐轮内容  输出:成交概率+置信度 | 层数/宽度论文没给,以下画到组件级</text>
+
+  <!-- ============ 输入 ============ -->
+  <text class="h2" x="60" y="100">① 输入(对话第 t 轮为止)</text>
+
+  <rect x="40" y="115" width="440" height="100" rx="10" fill="#E8EEF7" stroke="#4A6FA5" stroke-width="2"/>
+  <text class="bt" x="260" y="143" text-anchor="middle">Azure embedding(3072 维)</text>
+  <text class="item" x="60" y="170">GenerateAzureEmbeddings(history) 产生</text>
+  <text class="item" x="60" y="195">编码"说了什么"(语义内容)</text>
+
+  <rect x="520" y="115" width="440" height="100" rx="10" fill="#E8EEF7" stroke="#4A6FA5" stroke-width="2"/>
+  <text class="bt" x="740" y="143" text-anchor="middle">销售专用特征</text>
+  <text class="item" x="540" y="170">ExtractFeatures(history) 产生</text>
+  <text class="item" x="540" y="195">编码"怎么说"(对话动态),具体清单论文没列</text>
+
+  <!-- ============ encoder ============ -->
+  <text class="h2" x="60" y="265">② 状态</text>
+
+  <rect x="300" y="280" width="400" height="90" rx="10" fill="#FFF4E0" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="500" y="308" text-anchor="middle">state encoder:合成当前状态 s</text>
+  <text class="item" x="320" y="335">向量+特征拼接;部署时增量更新,只算新一轮</text>
+
+  <!-- 输入→encoder -->
+  <line x1="260" y1="215" x2="430" y2="275" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <line x1="740" y1="215" x2="570" y2="275" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+
+  <!-- ============ 三个头 ============ -->
+  <text class="h2" x="60" y="425">③ 三个头,输入同一个状态 s</text>
+
+  <rect x="40" y="445" width="290" height="160" rx="10" fill="#EAF7EA" stroke="#2E7D32" stroke-width="2"/>
+  <text class="bt" x="185" y="473" text-anchor="middle">policy network(主头)</text>
+  <line x1="60" y1="485" x2="310" y2="485" stroke="#2E7D32" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="60" y="510">输入 s → 输出 P(成交),0~1</text>
+  <text class="item" x="60" y="540">部署时用户要的就是它</text>
+  <text class="item" x="60" y="570">每聊一轮刷新一次</text>
+  <text class="item" x="60" y="595">不是从动作集里选,是回归出一个数</text>
+
+  <rect x="355" y="445" width="290" height="160" rx="10" fill="#FFF8E1" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="500" y="473" text-anchor="middle">value network(训练脚手架)</text>
+  <line x1="375" y1="485" x2="625" y2="485" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="375" y="510">输入 s → 输出期望累计奖励 V(s)</text>
+  <text class="item" x="375" y="540">RL 训练当 critic/基线用</text>
+  <text class="item" x="375" y="570">部署时用户拿不到它</text>
+  <text class="item" x="375" y="595">(Algorithm 1 只返回两个值)</text>
+
+  <rect x="670" y="445" width="290" height="160" rx="10" fill="#FFF8E1" stroke="#D9822B" stroke-width="2"/>
+  <text class="bt" x="815" y="473" text-anchor="middle">meta-learning(置信度)</text>
+  <line x1="690" y1="485" x2="940" y2="485" stroke="#D9822B" stroke-width="1" opacity="0.5"/>
+  <text class="item" x="690" y="510">输入 s → 输出置信度</text>
+  <text class="item" x="690" y="540">看:与训练集相似度</text>
+  <text class="item" x="690" y="565">　 集成间预测一致度</text>
+  <text class="item" x="690" y="590">　 有没有陌生元素</text>
+
+  <!-- encoder→三头 -->
+  <line x1="430" y1="370" x2="185" y2="440" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <line x1="500" y1="370" x2="500" y2="440" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <line x1="570" y1="370" x2="815" y2="440" stroke="#2E7D32" stroke-width="2.5" marker-end="url(#arrG)"/>
+
+  <!-- ============ 输出 ============ -->
+  <text class="h2" x="60" y="645">④ 返回</text>
+
+  <rect x="40" y="655" width="920" height="50" rx="8" fill="#EAF7EA" stroke="#2E7D32" stroke-width="1.5"/>
+  <text class="bar" x="500" y="687" text-anchor="middle" fill="#1B5E20">return {probability : policy , confidence : meta-learning} —— 就这两个,value 不返回</text>
+
+  <!-- 三头→输出 -->
+  <line x1="185" y1="605" x2="185" y2="652" stroke="#1565C0" stroke-width="2" marker-end="url(#arrB)"/>
+  <line x1="815" y1="605" x2="815" y2="652" stroke="#1565C0" stroke-width="2" marker-end="url(#arrB)"/>
+  <text class="item" x="500" y="725" text-anchor="middle" fill="#555">(value head 只在训练期工作)</text>
+
+  <!-- ============ 训练/部署条 ============ -->
+  <rect x="30" y="740" width="940" height="44" rx="8" fill="#FFF8E1" stroke="#D9822B" stroke-width="1.5"/>
+  <text class="bar" x="500" y="768" text-anchor="middle" fill="#8A5A00">训练期:reward=最终成交结果回传到 policy+value;监督预训练给初值 | 部署:8bit 量化+CPU,85ms/12 req/s</text>
+
+  <!-- reward 回传(右侧红色虚线) -->
+  <line x1="985" y1="740" x2="985" y2="445" stroke="#C62828" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrR)"/>
+  <text class="lbl" x="978" y="430" text-anchor="end" fill="#C62828">reward 回传(训练期)</text>
+</svg>
